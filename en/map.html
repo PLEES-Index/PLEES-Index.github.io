@@ -1,0 +1,200 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>PLEES index: map</title>
+<link rel="icon" href="../images/Logo1.png">
+<meta charset="utf-8">
+<!--Reading in style sheets -->
+<noscript>
+<link rel="stylesheet" href="../css/5grid/core.css">
+<link rel="stylesheet" href="../css/5grid/core-desktop.css">
+<link rel="stylesheet" href="../css/5grid/core-1200px.css">
+<link rel="stylesheet" href="../css/5grid/core-noscript.css">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/style-desktop.css">
+</noscript>
+<!--Reading in scripts -->
+<script src="../css/5grid/jquery.js"></script>
+<script src="../css/5grid/init.js?use=mobile,desktop,1000px&amp;mobileUI=1&amp;mobileUI.theme=none"></script>
+<script src="https://unpkg.com/elm-pep@1.0.6/dist/elm-pep.js"></script>
+<script type="module" src="../main.js"></script>
+<script src='../node_modules/plotly-2.18.2.min.js'></script>
+</head>
+
+<body>
+<!-- Header part -->
+<div id="header-wrapper">
+  <header id="header" class="5grid-layout">
+    <div class="row">
+      <div class="12u">
+        <!-- Title -->
+		<p><a href="index.html" class="mobileUI-site-name"><img src="../images/Logo1.png" width="75px" height="75px" alt=""></a><br><br></p>
+		<h1><a href="index.html" class="mobileUI-site-name">PLEES index</a></h1>
+        <!-- Menu bar -->
+        <nav class="mobileUI-site-nav"> 
+            <div class="dropdown">
+				<button class="dropbtn">En 
+				  <i class="fa fa-caret-down"></i>
+				</button>
+				<div class="dropdown-content">
+				  <a href="../fr/map.html">Français</a>
+				  <a href="../it/map.html">Italiano</a>
+				  <a href="../nl/map.html">Nederlands</a>
+				</div>
+			</div> 
+			<a href="about.html">About</a> 
+			<a href="sources.html">Sources</a> 
+			<a href="science.html">Science</a> 
+			<a href="map.html" class="active">Map</a> 
+			<a href="index.html">Home</a> 
+		</nav>
+      </div>
+    </div>
+  </header>
+</div>
+
+
+<!-- Style -->
+<style>
+	#map {
+		padding: 0;
+		margin: 0;
+		height: 600px;
+		width: 100%;
+		font-family: Arial, Helvetica, sans-serif;
+		font-size: 14px;
+		<!-- color: #323232; dark background -->
+		color: #FFFFFF; <!-- white background -->
+	}
+</style>
+
+
+
+<!-- Main body -->
+<div id="wrapper">
+	<div class="5grid-layout">
+	  <div id="feature-content">
+	  <section>
+		<h2>PLEES Map</h2>
+	  </section>
+	  <!-- Row for the map -->
+	  <div class="row">
+        <div class="12u">
+			<!-- Insert the map -->
+			<div id="map" class="map"></div>
+			<!-- List to select different scenarios -->
+			<div id="legend_box">
+				<div class="row"> 
+					<table id="general_info">
+					  <tr style="border-bottom:1px solid black">
+						<td colspan="100%"></td>
+					  </tr>
+					  <tr>
+						<th>Index:</th>
+						<td>
+						  <select id="index">
+							<option value="PLEES">PLEES</option>
+							<option value="P">P</option>
+							<option value="LE">LE</option>
+							<option value="E">E</option>
+							<option value="S">S</option>
+						  </select>
+						</td>
+					  </tr>
+					  <tr>
+						<th>Scenario:</th>
+						<td>
+						  <select id="basemaps">
+							<option value="00_1975">1975</option>
+							<option value="00_2010" selected="selected">Present day</option>
+							<option value="45_2080">2080 RCP 4.5</option>
+							<option value="85_2080">2080 RCP 8.5</option>
+						  </select>
+						</td>
+					  </tr>
+					  <tr style="border-bottom:1px solid black">
+						<td colspan="100%"></td>
+					  </tr>
+					  <tr>
+						<th>Country:</th>
+						<td id="info_country"></td>
+					  </tr>
+					  <tr>
+						<th>Continent:</th>
+						<td id="info_continent"></td>
+					  </tr>
+					  <tr id="row_plees">
+						<th>PLEES index:</th>
+						<td id="info_val"></td>
+					  </tr>
+					  <tr id="row_p">
+						<th>P  index:</th>
+						<td id="info_x1"></td>
+					  </tr>
+					  <tr id="row_le">
+						<th>LE index:</th>
+						<td id="info_x2"></td>
+					  </tr>
+					  <tr id="row_e">
+						<th>E  index:</th>
+						<td id="info_x3"></td>
+					  </tr>
+					  <tr id="row_s">
+						<th>S  index:</th>
+						<td id="info_x4"></td>
+					  </tr>
+					  <tr style="border-bottom:1px solid black">
+						<td colspan="100%"></td>
+					  </tr>
+					</table>
+				</div>
+				<div class="row">
+				<div class='my-legend'>
+					<div class='legend-scale'>
+						<ul class='legend-labels'>
+							<li id="legend0"><span style='background:#081D59;'></span>0</li>
+							<li id="legend1"><span style='background:#455578;'></span>1</li>
+										<li id="legend2"><span style='background:#838E98;'></span>2</li>
+										<li id="legend3"><span style='background:#C1C6B8;'></span>3</li>
+							<li id="legend4"><span style='background:#FFFFD8;'></span>4</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			</div>
+		</div>
+	  </div>
+	  </div>
+	  <!-- Row for the details -->
+	  <div class="row">
+      <div class="12u">
+		<div class="6u"> <div id="info_country_1" style="width:100%"></div> </div>
+		<div class="5u">
+		<h1>This box plot shows how the <span id="plot1_ind1">PLEES</span> index of <span id="plot1_country1">a country</span> compares to the rest of the world.</h1><br>
+		<h1><b>How to read:</b></h1><br>
+		<p>The horizontal line represents the <span id="plot1_ind2">PLEES</span> value of <span id="plot1_country2">a selected country</span>. Each colour represents a different continent. The box shows where the values of half of the countries on that continent fall. The top and bottom lines show where the majority of values lie between. (In mathematical terms these are defined as the 25th percentile - 1.5 time interquartile distance and the 75th percentile - 1.5 time the interquartile distance.).</P><br>
+		</div>
+		
+	  </div>
+      <div class="12u">
+		<div class="5u"> Some text. </div>
+		<div class="6u"> <div id="info_country_2" style="width:100%"></div> </div>
+	  </div>
+      <div class="12u">
+		<div class="6u"> <div id="info_country_3" style="width:100%"></div> </div>
+		<div class="5u"> Some text. </div>
+	  </div>
+	  </div>
+	</div>
+</div>
+
+<!-- Footer part -->
+<div class="5grid-layout">
+  <div id="copyright">
+    <section>
+      <p>&copy; PLEES team - 2023</p>
+    </section>
+  </div>
+</div>
+</body>
+</html>

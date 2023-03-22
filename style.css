@@ -1,0 +1,249 @@
+@import "node_modules/ol/ol.css";
+@import "css/kickstart-grid.css";
+
+/*---------------------------------
+	UTILITY
+-----------------------------------*/
+.center{text-align:center;}
+.left{text-align:left;}
+.right{text-align:right;}
+
+/*---------------------------------
+	HR
+-----------------------------------*/
+hr{clear:both;border-bottom:0;border-top:1px dotted #ccc;border-right:0;border-left:0;margin:30px 0;min-height: 0;height:1px;}
+hr.alt1{border-style: solid;}
+hr.alt2{border-style: dashed;}
+
+/*---------------------------------
+	HTML5 ELEMENTS (shim)
+-----------------------------------*/
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section {
+display:block;
+}
+
+/*---------------------------------
+	HEADINGS
+-----------------------------------*/
+h1,h2,h3,h4,h5,h6{
+font-weight:bold;
+line-height:140%;
+}
+
+h1{
+font-size:3.5em;
+margin:10px 0 10px 0;
+}
+
+h2{
+font-size:3em;
+margin:10px 0 10px 0;
+}
+
+h3{
+font-size:2.5em;
+margin:10px 0 10px 0;
+line-height:130%;
+}
+
+h4{
+font-size:2em;
+margin:10px 0 10px 0;
+}
+
+h5{
+font-size:1.5em;
+margin:10px 0 10px 0;
+}
+
+h6{
+font-size:1.2em;
+margin:10px 0 5px 0;
+}
+
+/*---------------------------------
+	PARAGRAPHS
+-----------------------------------*/
+p{
+margin:10px 0;
+}
+
+/*---------------------------------
+	BLOCKQUOTES
+-----------------------------------*/
+blockquote{
+font-size:1.5em;
+line-height:1.5em;
+font-style: italic;
+margin:30px 30px 30px 0;
+padding:0 0 0 20px;
+border-left:1px solid #ccc;
+}
+
+	blockquote span{font-size:0.7em;display:block;}
+	blockquote.small{font-size:1.2em;}
+
+/*---------------------------------
+	LISTS
+-----------------------------------*/
+ul, ol{
+padding:0;
+margin:0 0 20px 25px;
+}
+
+li{
+padding:5px 0;
+margin:0;
+}
+
+ul.list-unstyled{
+padding:0;
+margin:0 0 20px 0;
+}
+
+ul.list-unstyled li{
+padding:5px 0;
+margin:0;
+list-style-type:none;
+
+}
+	
+ul.alt{
+padding:0;
+margin:0 0 20px 0;
+}
+
+ul.alt li{
+list-style-type:none;
+border-top:1px dotted #ccc;
+border-bottom:1px dotted #ccc;
+margin:0 0 -1px 0;
+padding-left:20px;
+}
+
+ul.icons{
+margin:0 0 20px 0;
+padding:0;
+}
+
+ul.icons li{
+list-style-type:none;
+margin:0;
+padding:5px 0;
+}
+
+/*---------------------------------
+	LAYOUT
+-----------------------------------*/
+body{
+margin:0;
+padding:0 0 0 0;
+color:#000;
+font:normal 0.9em/150% 'Arimo', arial, verdana, sans-serif;
+text-shadow: 0 0 1px transparent; /* google font pixelation fix */
+}
+
+/*---------------------------------
+	MMENU
+-----------------------------------*/
+.menu{
+font-family: "Arimo", arial, verdana, sans-serif;
+background-image: none;
+background-color: rgb(80, 75, 70);
+border:1px solid rgba(80, 80, 80, 0.45);
+}
+.menu li a {
+display:inline-block;
+color:#efefef;
+padding:0.5em 1.1em;
+text-decoration:none;
+text-transform: uppercase;
+line-height:100%;
+font-size: 1.0em;
+text-shadow: none;
+}
+.menu li a:hover {
+background-color: rgb(180, 100, 80);
+}
+.menu li.current a, .menu li.current a:hover {
+background-color: rgb(180, 100, 80);
+background-image: none;
+}
+@media screen and (min-width: 992px) {
+    .menu li a {
+        padding:0.5em 0.6em;
+        font-size: 0.79em;
+    }
+}
+@media screen and (min-width: 1068px) {
+    .menu li a {
+        padding:0.5em 0.8em;
+        font-size: 0.81em;
+    }
+}
+@media screen and (min-width: 1280px) {
+    .menu li a {
+        padding:0.5em 0.9em;
+        font-size: 0.94em;
+    }
+}
+@media screen and (min-width: 1440px) {
+    .menu li a {
+        padding:0.5em 1.15em;
+        font-size: 1em;
+    }
+}
+.menudiv {
+margin-bottom: -1.8em;
+}
+
+
+
+
+/*---------------------------------
+	Unorganised
+-----------------------------------*/
+
+html, body {
+  margin: 0;
+  height: 100%;
+}
+
+.content {
+border:1px solid rgba(80, 80, 80, 0.45);
+background-color: rgba(255, 253, 250, 0.70);
+padding: 20px;
+}
+
+#map {
+  /*position: absolute;*/
+  top: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+.note {
+  padding: 0px;
+}
+
+.column {
+  float: left;
+  padding: 10px;
+  height: 300px;
+}
+
+.left {
+  width: 25%;
+}
+
+.right {
+  width: 75%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}

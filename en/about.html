@@ -1,0 +1,155 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>PLEES index: about</title>
+<link rel="icon" href="../images/Logo1.png">
+<meta charset="utf-8">
+<!--Reading in style sheets -->
+<noscript>
+<link rel="stylesheet" href="../css/5grid/core.css">
+<link rel="stylesheet" href="../css/5grid/core-desktop.css">
+<link rel="stylesheet" href="../css/5grid/core-1200px.css">
+<link rel="stylesheet" href="../css/5grid/core-noscript.css">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/style-desktop.css">
+</noscript>
+<!--Reading in scripts -->
+<script src="../css/5grid/jquery.js"></script>
+<script src="../css/5grid/init.js?use=mobile,desktop,1000px&amp;mobileUI=1&amp;mobileUI.theme=none"></script>
+<script src="https://unpkg.com/elm-pep@1.0.6/dist/elm-pep.js"></script>
+</head>
+
+<body>
+<!-- Header part -->
+<div id="header-wrapper">
+  <header id="header" class="5grid-layout">
+    <div class="row">
+      <div class="12u">
+        <!-- Title -->
+		<p><a href="index.html" class="mobileUI-site-name"><img src="../images/Logo1.png" width="75px" height="75px" alt=""></a><br><br></p>
+		<h1><a href="index.html" class="mobileUI-site-name">PLEES index</a></h1>
+        <!-- Menu bar -->
+        <nav class="mobileUI-site-nav"> 
+            <div class="dropdown">
+				<button class="dropbtn">En 
+				  <i class="fa fa-caret-down"></i>
+				</button>
+				<div class="dropdown-content">
+				  <a href="../fr/about.html">Français</a>
+				  <a href="../it/about.html">Italiano</a>
+				  <a href="../nl/about.html">Nederlands</a>
+				</div>
+			</div> 
+			<a href="about.html" class="active">About</a> 
+			<a href="sources.html">Sources</a> 
+			<a href="science.html">Science</a> 
+			<a href="map.html">Map</a> 
+			<a href="index.html">Home</a> 
+		</nav>
+      </div>
+    </div>
+  </header>
+</div>
+ 
+ 
+ 
+<!-- Main body -->
+<div id="wrapper">
+<div class="5grid-layout">
+    <div id="page">
+      <div class="row">
+        <div class="12u">
+          <section id="content">
+            <h2>The project:</h2><br>
+            <p>
+			We are the PLEES team, a group of PhD students from the University of Vienna, concerned with the direction our climate is headed.<br>
+			In the spring of 2022 we came together in the frame of Vienna International School of Earth and Space Science (VISESS), a programme dedicate to broadening the horizons of doctoral students and promote inter disciplinary cooperation. And what connects people more than the world we live in? As most people nowadays, we also want to contribute our bit to better the world. As scientists who are not researching climate, we saw our opportunity to
+			contribute by processing information and making it accessible.
+			<br><br>
+			The project has been presented at several conferences: 
+			<ul>
+			  <li>Astronomers for Planet Earth</li>
+			</ul>
+			</p>
+		   </section>
+        </div>
+      </div>
+    </div>
+    <div id="feature-content">
+      <section>
+        <h2>The Team:</h2>
+      </section>
+      <div class="row">
+        <div class="12u">
+          <div class="row">
+            <div class="3u">
+              <section>
+                <div>
+                  <div><a href="#"><img src="../images/LF.png" alt=""  onclick="readMore('LF')"></a></div>
+                </div>
+                <p style="text-align:center"> <strong>Laurane Fréour</strong> </p> 
+				<p><span id="moreLF">"I am a PhD student in astrophysics, night sky and nature lover.  Concerned by the climate and social crisis, developing the PLEES project helped me to deal with my eco-anxiety through offering an interdisciplinary way to communicate about climate change."</span> </p>
+              </section>
+            </div>
+            <div class="3u">
+              <section>
+                <div>
+                  <div><a href="#"><img class="image1" src="../images/PG.png" alt=""  onclick="readMore('PG')"></a></div>
+                </div>
+                <p style="text-align:center"> <strong>Paula Granero</strong> </p> 
+				<p><span id="morePG">"As a Geology PhD student, one of my research interests is micropalaeontology. Through an analysis of assemblages of calcareous nannofossils, my research aims to shed light on separate palaeoclimatic and palaeoceanographic events that occurred more than 70 million years ago. I wanted to participate in the PLEES project because I am concerned not just about the present but also the future."</span> </p>
+              </section>
+            </div>
+            <div class="3u">
+              <section>
+                <div>
+                  <div><a href="#"><img src="../images/GVL.png" alt="" onclick="readMore('GVL')"></a></div>
+                </div>
+                <p style="text-align:center"> <strong>Gwenaël Van Looveren</strong> </p> 
+				<p><span id="moreGVL">"I am a PhD student in astrophysics studying atmospheres. A big part of my research focuses on the habitability of exoworlds, which is a constant reminder of how fragile and precious our world is. Through the PLEES project I hope to share how fast our world can change."</span> </p>
+              </section>
+            </div>
+            <div class="3u">
+              <section>
+                <div>
+                  <div><a href="#"><img src="../images/TV.png" alt="" onclick="readMore('TV')"></a></div>
+                </div>
+                <p style="text-align:center"> <strong>Tadeja Veršič</strong> </p> 
+				<p><span id="moreTV">"I am a PhD student in astrophysics and by nature a very curious and passionate person. I got involved in the PLEES project because I am concerned about our future and wanted to contribute to making the world a bit better."</span> </p>
+              </section>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+</div>	
+	
+
+ <script>
+document.getElementById("moreLF").style.display = "none";
+document.getElementById("morePG").style.display = "none";
+document.getElementById("moreGVL").style.display = "none";
+document.getElementById("moreTV").style.display = "none";
+function readMore(name) {
+  var moreText = document.getElementById("more"+name);
+
+  if ( moreText.style.display == "inline") {
+    moreText.style.display = "none";
+  } else {
+    moreText.style.display = "inline";
+  }
+}
+</script>
+ 
+ 
+<!-- Footer part -->
+<div class="5grid-layout">
+  <div id="copyright">
+    <section>
+      <p>&copy; PLEES team - 2023</p>
+    </section>
+  </div>
+</div>
+</body>
+</html>

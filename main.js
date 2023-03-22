@@ -1,9 +1,9 @@
-import {GeoJSON} from '/scripts/ol/format/GeoJSON';
-import {Map} from '/scripts/ol/Map';
-import {VectorLayer} from '/scripts/ol/layer/Vector';
-import {VectorSource} from '/scripts/ol/source/Vector';
-import {View} from '/scripts/ol/View';
-import {Fill, Stroke, Style} from '/scripts/ol/style';
+import {GeoJSON} from '/scripts/ol/format/GeoJSON.js';
+import {Map} from '/scripts/ol/Map.js';
+import {VectorLayer} from '/scripts/ol/layer/Vector.js';
+import {VectorSource} from '/scripts/ol/source/Vector.js';
+import {View} from '/scripts/ol/View.js';
+import {Fill, Stroke, Style} from '/scripts/ol/style.js';
 
 //import dataset from './data/data.json' assert { type: 'JSON' };
 const dataset = import('/data/data.json', {assert: {type: 'json'}});

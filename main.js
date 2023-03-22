@@ -1,13 +1,9 @@
-import GeoJSON from '/node_modules/ol/format/GeoJSON';
-import Map from '/node_modules/ol/Map';
-import VectorLayer from '/node_modules/ol/layer/Vector';
-import VectorSource from '/node_modules/ol/source/Vector';
-import View from '/node_modules/ol/View';
-//import Plotly from './node_modules/plotly.js-dist/plotly';
-import {Fill, Stroke, Style} from '/node_modules/ol/style';
-
-//const datarcp45 = import('./data/datarcp45.json', {assert: {type: 'json'}});
-//const datarcp85 = import('./data/datarcp85.json', {assert: {type: 'json'}});
+import GeoJSON from '../scripts/ol/format/GeoJSON';
+import Map from '../scripts/ol/Map';
+import VectorLayer from '../scripts/ol/layer/Vector';
+import VectorSource from '../scripts/ol/source/Vector';
+import View from '../scripts/ol/View';
+import {Fill, Stroke, Style} from '../scripts/ol/style';
 
 //import dataset from './data/data.json' assert { type: 'JSON' };
 const dataset = import('/data/data.json', {assert: {type: 'json'}});

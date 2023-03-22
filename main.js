@@ -8,7 +8,9 @@ import {Fill, Stroke, Style} from './node_modules/ol/style';
 
 //const datarcp45 = import('./data/datarcp45.json', {assert: {type: 'json'}});
 //const datarcp85 = import('./data/datarcp85.json', {assert: {type: 'json'}});
-import dataset from './data/data.json' assert { type: 'JSON' };
+
+//import dataset from './data/data.json' assert { type: 'JSON' };
+const dataset = import('./data/data.json', {assert: {type: 'json'}});
 
 // Set constants that are used throughout the code
 var scenario = "00_2010";

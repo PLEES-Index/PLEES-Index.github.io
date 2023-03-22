@@ -51,6 +51,7 @@ a {
 }
 
 
+
 /* Header */
 
 #header-wrapper {
@@ -98,29 +99,27 @@ a {
 /* Reusable Buttons */
 
 .button {
-	text-align: center;
+  background-color: #4aaf8f;
+  padding: 15px 32px;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
 }
 
 .button a {
-	display: inline-block;
-	outline: 0;
-	white-space: nowrap;
-	margin-top: 20px;
-	padding: 10px 30px 10px 30px;
-	background: #23272D;
-	box-shadow: inset 0px 0px 0px 1px #363E46, 0px 2px 3px 0px rgba(0,0,0,0.25);
-	border: solid 1px #363E46;
-	border-radius: 6px;
-	background-image: -moz-linear-gradient(top, #686E76, #21252B);
-	background-image: -webkit-linear-gradient(top, #686E76, #21252B);
-	background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#686E76), to(#21252B));
-	background-image: -ms-linear-gradient(top, #686E76, #21252B);
-	background-image: -o-linear-gradient(top, #686E76, #21252B);
-	background-image: linear-gradient(top, #686E76, #21252B);
-	text-decoration: none;
-	text-shadow: -1px -1px 0 rgba(0,0,0,0.5);
-	font-size: 12pt;
-	color: #FFFFFF;
+  background-color: #4aaf8f;
+  padding: 15px 32px;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
 }
 
 /* List style1 */

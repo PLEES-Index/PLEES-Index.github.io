@@ -1,7 +1,7 @@
 {
   "name": "vector-layer",
   "dependencies": {
-    "ol": "^7.1.0",
+    "ol": "7.1.0",
     "plotly.js-dist": "^2.18.2"
   },
   "devDependencies": {

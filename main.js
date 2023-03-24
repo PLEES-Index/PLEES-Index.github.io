@@ -5,8 +5,8 @@ import VectorSource from '/node_modules/ol/source/Vector.js';
 import View from '/node_modules/ol/View.js';
 import {Fill, Stroke, Style} from '/node_modules/ol/style.js';
 
-import dataset from './data/data.json' assert { type: 'JSON' };
-//const dataset = import('/data/data.json', {assert: {type: 'json'}});
+//import dataset from './data/data.json' assert { type: 'JSON' };
+const dataset = import('/data/data.json', {assert: {type: 'json'}});
 
 // Set constants that are used throughout the code
 var scenario = "00_2010";

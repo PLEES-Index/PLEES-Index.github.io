@@ -6,7 +6,7 @@ import View from '/node_modules/ol/View.js';
 import {Fill, Stroke, Style} from '/node_modules/ol/style.js';
 
 //import dataset from './data/data.json' assert { type: 'JSON' };
-const dataset = fetch('./data/data.json')
+const dataset = fetch('/data/data.json')
   .then(function (response) {
     return response.json();
   })

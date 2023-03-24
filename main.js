@@ -6,13 +6,7 @@ import View from '/node_modules/ol/View.js';
 import {Fill, Stroke, Style} from '/node_modules/ol/style.js';
 
 //import dataset from './data/data.json' assert { type: 'JSON' };
-const dataset = fetch('/data/data.json')
-  .then(function (response) {
-    return response.json();
-  })
-  .then(function (data) {
-    console.log(data);
-  })
+const dataset = fetch('/data/data.json');
 
 // Set constants that are used throughout the code
 var scenario = "00_2010";

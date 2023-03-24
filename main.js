@@ -6,7 +6,8 @@ import View from '/node_modules/ol/View.js';
 import {Fill, Stroke, Style} from '/node_modules/ol/style.js';
 
 //import dataset from './data/data.json' assert { type: 'JSON' };
-const dataset = import('/data/data.json', {assert: {type: 'json'}});
+const dataset = require('./data/data.json');
+console.log(typeof dataset);
 console.log(dataset);
 
 // Set constants that are used throughout the code

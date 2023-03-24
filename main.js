@@ -7,6 +7,7 @@ import {Fill, Stroke, Style} from '/node_modules/ol/style.js';
 
 //import dataset from './data/data.json' assert { type: 'JSON' };
 const dataset = import('/data/data.json', {assert: {type: 'json'}});
+console.log(dataset);
 
 // Set constants that are used throughout the code
 var scenario = "00_2010";

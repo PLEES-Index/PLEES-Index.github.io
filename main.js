@@ -1,8 +1,8 @@
-import {GeoJSON} from '/node_modules/ol/format/GeoJSON.js';
-import {Map} from '/node_modules/ol/Map.js';
-import {VectorLayer} from '/node_modules/ol/layer/Vector.js';
-import {VectorSource} from '/node_modules/ol/source/Vector.js';
-import {View} from '/node_modules/ol/View.js';
+import GeoJSON from '/node_modules/ol/format/GeoJSON.js';
+import Map from '/node_modules/ol/Map.js';
+import VectorLayer from '/node_modules/ol/layer/Vector.js';
+import VectorSource from '/node_modules/ol/source/Vector.js';
+import View from '/node_modules/ol/View.js';
 import {Fill, Stroke, Style} from '/node_modules/ol/style.js';
 
 //import dataset from './data/data.json' assert { type: 'JSON' };

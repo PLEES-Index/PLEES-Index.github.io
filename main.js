@@ -6,17 +6,16 @@ import View from '/node_modules/ol/View.js';
 import {Fill, Stroke, Style} from '/node_modules/ol/style.js';
 
 //import dataset from './data/data.json' assert { type: 'JSON' };
-async function foo() {
-  let dataset;
+var dataset;
 
-  const res = await fetch('/data/data.json')
-
-  dataset = await res.json();
-
-  console.log(dataset)
-}
-
-foo();
+fetch('/data/data.json')
+  .then(res => res.json())
+  .then(data => {
+    dataset = data;
+   })
+  .then(() => {
+    console.log(dataset);
+   });
 
 // Set constants that are used throughout the code
 var scenario = "00_2010";

@@ -333,3 +333,5 @@ function updatePlot(feature) {
 	Plotly.update(plot2, {'x': [x], 'y': [y]});
 	Plotly.update(plot3, {'x': [x], 'y': [y]});
 }
+
+updatePlot();

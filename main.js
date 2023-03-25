@@ -14,7 +14,7 @@ fetch('/data/data.json')
     dataset = data;
    })
   .then(() => {
-    console.log(dataset);
+	updatePlot();
    });
 
 // Set constants that are used throughout the code
@@ -333,5 +333,3 @@ function updatePlot(feature) {
 	Plotly.update(plot2, {'x': [x], 'y': [y]});
 	Plotly.update(plot3, {'x': [x], 'y': [y]});
 }
-
-updatePlot();

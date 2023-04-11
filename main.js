@@ -83,7 +83,7 @@ function NumbertoColor(num) {
 	//	b = "0" + b;
 	  //return "#" + r + g + b;
 	  
-	  l = Math.floor((maxcol[2]-mincol[2])/maxval*num+mincol[2])/100;
+	  const l = Math.floor((maxcol[2]-mincol[2])/maxval*num+mincol[2])/100;
 	  const a = Math.floor((maxcol[1]-mincol[1])/maxval*num+mincol[1]) * Math.min(l, 1 - l) / 100;
 	  const f = n => {
 	    const k = (n + Math.floor((maxcol[0]-mincol[0])/maxval*num+mincol[0]) / 30) % 12;

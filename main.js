@@ -57,9 +57,13 @@ function checkValue(num) {
 
 // Function to convert a value into a hex colour
 function NumbertoColor(num) {
+  //RGB
   //const maxcol = [102,37,5]		//brown
-  const mincol = [8,29,89];		//blue
-  const maxcol = [255,255,216];	//yellow
+  //const mincol = [12,44,132];		//blue
+  //const maxcol = [255,255,217];	        //yellow
+  //HSL
+  const mincol = [224,83,19];           //blue
+  const maxcol = [60,100,93];           //yellow
   if (num) {
 	  // Set the maximum value
 	  if (selected_index == 'PLEES') {
@@ -68,16 +72,25 @@ function NumbertoColor(num) {
 		  var maxval = 1;
 	  }
 	  // Calculate the correct colour
-	  let r = Math.floor((maxcol[0]-mincol[0])/maxval*num+mincol[0]).toString(16);
-	  let g = Math.floor((maxcol[1]-mincol[1])/maxval*num+mincol[1]).toString(16);
-	  let b = Math.floor((maxcol[2]-mincol[2])/maxval*num+mincol[2]).toString(16);
-	  if (r.length == 1)
-		r = "0" + r;
-	  if (g.length == 1)
-		g = "0" + g;
-	  if (b.length == 1)
-		b = "0" + b;
-	  return "#" + r + g + b;
+	  //let r = Math.floor((maxcol[0]-mincol[0])/maxval*num+mincol[0]).toString(16);
+	  //let g = Math.floor((maxcol[1]-mincol[1])/maxval*num+mincol[1]).toString(16);
+	  //let b = Math.floor((maxcol[2]-mincol[2])/maxval*num+mincol[2]).toString(16);
+	  //if (r.length == 1)
+	//	r = "0" + r;
+	  //if (g.length == 1)
+	//	g = "0" + g;
+	  //if (b.length == 1)
+	//	b = "0" + b;
+	  //return "#" + r + g + b;
+	  
+	  l = Math.floor((maxcol[2]-mincol[2])/maxval*num+mincol[2])/100;
+	  const a = Math.floor((maxcol[1]-mincol[1])/maxval*num+mincol[1]) * Math.min(l, 1 - l) / 100;
+	  const f = n => {
+	    const k = (n + Math.floor((maxcol[0]-mincol[0])/maxval*num+mincol[0]) / 30) % 12;
+	    const color = l - a * Math.max(Math.min(k - 3, 9 - k, 1), -1);
+	    return Math.round(255 * color).toString(16).padStart(2, '0');   // convert to Hex and prefix "0" if needed
+	  };
+	  return `#${f(0)}${f(8)}${f(4)}`;
   } else {
 	  return "#e5ecf6";
   }

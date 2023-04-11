@@ -79,7 +79,7 @@ function NumbertoColor(num) {
 		b = "0" + b;
 	  return "#" + r + g + b;
   } else {
-	  return "#4075bf";
+	  return "#e5ecf6";
   }
 }
 

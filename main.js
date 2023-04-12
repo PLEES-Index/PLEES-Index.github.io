@@ -63,8 +63,8 @@ function NumbertoColor(num) {
   //const maxcol = [255,255,217];	        //yellow
   //HSL
   const mincol = [224,83,19];           //blue
-  const maxcol = [60,100,93];           //yellow
-  if (num) {
+  const maxcol = [60,100,83];           //yellow
+  if (num or) {
 	  // Set the maximum value
 	  if (selected_index == 'PLEES') {
 		  var maxval = 4;
@@ -100,13 +100,13 @@ function NumbertoColor(num) {
 document.getElementById("index").onchange = function() {
 	selected_index = document.getElementById("index").value;
 	if (selected_index == "PLEES") {
-		legend0.innerHTML = "<span style='background:"+NumbertoColor(0)+";'></span>0";
+		legend0.innerHTML = "<span style='background:"+NumbertoColor(0.0)+";'></span>0";
 		legend1.innerHTML = "<span style='background:"+NumbertoColor(1)+";'></span>1";
 		legend2.innerHTML = "<span style='background:"+NumbertoColor(2)+";'></span>2";
 		legend3.innerHTML = "<span style='background:"+NumbertoColor(3)+";'></span>3";
 		legend4.innerHTML = "<span style='background:"+NumbertoColor(4)+";'></span>4";
 	} else {
-		legend0.innerHTML = "<span style='background:"+NumbertoColor(0)+";'></span>0";
+		legend0.innerHTML = "<span style='background:"+NumbertoColor(0.0)+";'></span>0";
 		legend1.innerHTML = "<span style='background:"+NumbertoColor(0.25)+";'></span>0.25";
 		legend2.innerHTML = "<span style='background:"+NumbertoColor(0.50)+";'></span>0.50";
 		legend3.innerHTML = "<span style='background:"+NumbertoColor(0.75)+";'></span>0.75";

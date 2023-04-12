@@ -63,11 +63,12 @@ function NumbertoColor(num) {
   //const maxcol = [255,255,217];	        //yellow
   //HSL
   const mincol = [224,83,19];           //blue
-  const maxcol = [60,100,83];           //yellow
+  const maxcol = [60,100,53];           //yellow
   if (num || num == "0") {
 	  // Set the maximum value
 	  if (selected_index == 'PLEES') {
-		  var maxval = 4;
+		  var maxval = 4-1;
+		  num = num - 1;
 	  } else {
 		  var maxval = 1;
 	  }

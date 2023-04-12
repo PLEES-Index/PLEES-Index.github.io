@@ -100,17 +100,17 @@ function NumbertoColor(num) {
 document.getElementById("index").onchange = function() {
 	selected_index = document.getElementById("index").value;
 	if (selected_index == "PLEES") {
-		legend0.innerHTML = "<span style='background:NumbertoColor(0);'></span>0";
-		legend1.innerHTML = "<span style='background:NumbertoColor(1);'></span>1";
-		legend2.innerHTML = "<span style='background:NumbertoColor(2);'></span>2";
-		legend3.innerHTML = "<span style='background:NumbertoColor(3);'></span>3";
-		legend4.innerHTML = "<span style='background:NumbertoColor(4);'></span>4";
+		legend0.innerHTML = "<span style='background:"+NumbertoColor(0)+";'></span>0";
+		legend1.innerHTML = "<span style='background:"+NumbertoColor(1)+";'></span>1";
+		legend2.innerHTML = "<span style='background:"+NumbertoColor(2)+";'></span>2";
+		legend3.innerHTML = "<span style='background:"+NumbertoColor(3)+";'></span>3";
+		legend4.innerHTML = "<span style='background:"+NumbertoColor(4)+";'></span>4";
 	} else {
-		legend0.innerHTML = "<span style='background:NumbertoColor(0);'></span>0";
-		legend1.innerHTML = "<span style='background:NumbertoColor(0.25);'></span>0.25";
-		legend2.innerHTML = "<span style='background:NumbertoColor(0.50);'></span>0.50";
-		legend3.innerHTML = "<span style='background:NumbertoColor(0.75);'></span>0.75";
-		legend4.innerHTML = "<span style='background:NumbertoColor(1.0);'></span>1";
+		legend0.innerHTML = "<span style='background:"+NumbertoColor(0)+";'></span>0";
+		legend1.innerHTML = "<span style='background:"+NumbertoColor(0.25)+";'></span>0.25";
+		legend2.innerHTML = "<span style='background:"+NumbertoColor(0.50)+";'></span>0.50";
+		legend3.innerHTML = "<span style='background:"+NumbertoColor(0.75)+";'></span>0.75";
+		legend4.innerHTML = "<span style='background:"+NumbertoColor(1.0)+";'></span>1";
 	}
 	if (selected_index == "P") {
 		document.getElementById("row_plees").style.display = "none";

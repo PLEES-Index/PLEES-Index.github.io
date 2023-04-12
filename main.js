@@ -64,7 +64,7 @@ function NumbertoColor(num) {
   //HSL
   const mincol = [224,83,19];           //blue
   const maxcol = [60,100,83];           //yellow
-  if (num or) {
+  if (num || num == "0") {
 	  // Set the maximum value
 	  if (selected_index == 'PLEES') {
 		  var maxval = 4;

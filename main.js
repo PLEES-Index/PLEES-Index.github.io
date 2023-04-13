@@ -57,68 +57,62 @@ function checkValue(num) {
 
 // Function to convert a value into a hex colour
 function NumbertoColor(num) {
-  //RGB
-  //const maxcol = [102,37,5]		//brown
-  //const mincol = [12,44,132];		//blue
-  //const maxcol = [255,255,217];	        //yellow
-	
-  if (num || num == "0") {
-	  // Set the maximum value
-	  if (selected_index == 'PLEES') {
-		  var maxval = 4-1;
-		  num = num - 1;
-	  } else {
-		  var maxval = 1;
-	  }
-	  
-	  // Calculate the correct colour
-	  //let r = Math.floor((maxcol[0]-mincol[0])/maxval*num+mincol[0]).toString(16);
-	  //let g = Math.floor((maxcol[1]-mincol[1])/maxval*num+mincol[1]).toString(16);
-	  //let b = Math.floor((maxcol[2]-mincol[2])/maxval*num+mincol[2]).toString(16);
-	  //if (r.length == 1)
-	//	r = "0" + r;
-	  //if (g.length == 1)
-	//	g = "0" + g;
-	  //if (b.length == 1)
-	//	b = "0" + b;
-	  //return "#" + r + g + b;
-	  console.log(num);
-	  if (num < maxval/8.0) {
-  		const mincol = [224,83,19];           //blue
-  		const maxcol = [232,60,36];           //midnight blue
-	  } else if ( num < maxval * 2.0/8.0) {
-  		const mincol = [232,60,36];           //midnight blue
-  		const maxcol = [213,66,40];           //navy
-	  } else if ( num < maxval * 3.0/8.0) {
-  		const mincol = [213,66,40];           //navy
-  		const maxcol = [197,74,43];           //light blue
-	  } else if ( num < maxval * 4.0/8.0) {
-  		const mincol = [197,74,43];           //light blue
-  		const maxcol = [186,53,51];           //teal
-	  } else if ( num < maxval * 5.0/8.0) {
-  		const mincol = [186,53,51];           //teal
-  		const maxcol = [166,44,65];           //green
-	  } else if ( num < maxval * 6.0/8.0) {
-  		const mincol = [166,44,65];           //green
-  		const maxcol = [98,55,81];            //lime
-	  } else if ( num < maxval * 7.0/8.0) {
-  		const mincol = [98,55,81];            //lime
-  		const maxcol = [69,84,84];            //lemon
-	  } else if ( num < maxval ) {
-  		const mincol = [69,84,84];            //lemon
-  		const maxcol = [60,100,93];           //yellow
-	  }
-	  
-	  const l = Math.floor((maxcol[2]-mincol[2])/maxval*num+mincol[2])/100;
-	  const a = Math.floor((maxcol[1]-mincol[1])/maxval*num+mincol[1]) * Math.min(l, 1 - l) / 100;
-	  const f = n => {
-	    const k = (n + Math.floor((maxcol[0]-mincol[0])/maxval*num+mincol[0]) / 30) % 12;
-	    const color = l - a * Math.max(Math.min(k - 3, 9 - k, 1), -1);
-	    return Math.round(255 * color).toString(16).padStart(2, '0');   // convert to Hex and prefix "0" if needed
-	  };
-	  return `#${f(0)}${f(8)}${f(4)}`;
-  } else {
+  if (isNaN(num))  {
 	  return "#e5ecf6";
+  } else {
+    //HSL
+    var mincol;
+    var maxcol;
+    var scale;
+    if (selected_index == 'PLEES') {
+        var maxval = 4-1;
+        num = num - 1;
+    } else {
+        var maxval = 1;
+    }
+
+    if (num < maxval/8.0) {
+        mincol = [224,83,19];           //blue
+        maxcol = [232,60,36];           //midnight blue
+        scale = (num - maxval * 0/8.0)/(maxval/8.0);
+    } else if ( num < maxval * 2.0/8.0) {
+        mincol = [232,60,36];           //midnight blue
+        maxcol = [213,66,40];           //navy
+        scale = (num - maxval * 1/8.0)/(maxval/8.0);
+    } else if ( num < maxval * 3.0/8.0) {
+        mincol = [213,66,40];           //navy
+        maxcol = [197,74,43];           //light blue
+        scale = (num - maxval * 2/8.0)/(maxval/8.0);
+    } else if ( num < maxval * 4.0/8.0) {
+        mincol = [197,74,43];           //light blue
+        maxcol = [186,53,51];           //teal
+        scale = (num - maxval * 3/8.0)/(maxval/8.0);
+    } else if ( num < maxval * 5.0/8.0) {
+        mincol = [186,53,51];           //teal
+        maxcol = [166,44,65];           //green
+        scale = (num - maxval * 4/8.0)/(maxval/8.0);
+    } else if ( num < maxval * 6.0/8.0) {
+        mincol = [166,44,65];           //green
+        maxcol = [98,55,81];            //lime
+        scale = (num - maxval * 5/8.0)/(maxval/8.0);
+    } else if ( num < maxval * 7.0/8.0) {
+        mincol = [98,55,81];            //lime
+        maxcol = [69,84,84];            //lemon
+        scale = (num - maxval * 6/8.0)/(maxval/8.0);
+    } else if ( num <= maxval ) {
+        mincol = [69,84,84];            //lemon
+        maxcol = [60,100,93];           //yellow
+        scale = (num - maxval * 7/8.0)/(maxval/8.0);
+    }
+    // Interpolate the colour
+    const l = Math.floor((maxcol[2]-mincol[2])*scale+mincol[2])/100;
+    const a = Math.floor((maxcol[1]-mincol[1])*scale+mincol[1]) * Math.min(l, 1 - l) / 100;
+    const f = n => {
+        const k = (n + Math.floor((maxcol[0]-mincol[0])*scale+mincol[0]) / 30) % 12;
+        const color = l - a * Math.max(Math.min(k - 3, 9 - k, 1), -1);
+        return Math.round(255 * color).toString(16).padStart(2, '0');   // convert to Hex and prefix "0" if needed
+        };
+	  return `#${f(0)}${f(8)}${f(4)}`;
   }
 }
 
@@ -126,7 +120,7 @@ function NumbertoColor(num) {
 document.getElementById("index").onchange = function() {
 	selected_index = document.getElementById("index").value;
 	if (selected_index == "PLEES") {
-		legend0.innerHTML = "<span style='background:"+NumbertoColor("NaN")+";'></span>0";
+		legend0.innerHTML = "<span style='background:"+NumbertoColor("NaN")+";'></span>No Data";
 		legend1.innerHTML = "<span style='background:"+NumbertoColor(1)+";'></span>1";
 		legend2.innerHTML = "<span style='background:"+NumbertoColor(2)+";'></span>2";
 		legend3.innerHTML = "<span style='background:"+NumbertoColor(3)+";'></span>3";

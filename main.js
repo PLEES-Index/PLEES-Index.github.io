@@ -61,9 +61,7 @@ function NumbertoColor(num) {
   //const maxcol = [102,37,5]		//brown
   //const mincol = [12,44,132];		//blue
   //const maxcol = [255,255,217];	        //yellow
-  //HSL
-  const mincol = [224,83,19];           //blue
-  const maxcol = [60,100,53];           //yellow
+	
   if (num || num == "0") {
 	  // Set the maximum value
 	  if (selected_index == 'PLEES') {
@@ -72,6 +70,7 @@ function NumbertoColor(num) {
 	  } else {
 		  var maxval = 1;
 	  }
+	  
 	  // Calculate the correct colour
 	  //let r = Math.floor((maxcol[0]-mincol[0])/maxval*num+mincol[0]).toString(16);
 	  //let g = Math.floor((maxcol[1]-mincol[1])/maxval*num+mincol[1]).toString(16);
@@ -83,6 +82,31 @@ function NumbertoColor(num) {
 	  //if (b.length == 1)
 	//	b = "0" + b;
 	  //return "#" + r + g + b;
+	  if (num < maxval/8) {
+  		const mincol = [224,83,19];           //blue
+  		const maxcol = [232,60,36];           //midnight blue
+	  } else if ( num < maxval * 2/8) {
+  		const mincol = [232,60,36];           //midnight blue
+  		const maxcol = [213,66,40];           //navy
+	  } else if ( num < maxval * 3/8) {
+  		const mincol = [213,66,40];           //navy
+  		const maxcol = [197,74,43];           //light blue
+	  } else if ( num < maxval * 4/8) {
+  		const mincol = [197,74,43];           //light blue
+  		const maxcol = [186,53,51];           //teal
+	  } else if ( num < maxval * 5/8) {
+  		const mincol = [186,53,51];           //teal
+  		const maxcol = [166,44,65];           //green
+	  } else if ( num < maxval * 6/8) {
+  		const mincol = [166,44,65];           //green
+  		const maxcol = [98,55,81];            //lime
+	  } else if ( num < maxval * 7/8) {
+  		const mincol = [98,55,81];            //lime
+  		const maxcol = [69,84,84];            //lemon
+	  } else if ( num < maxval ) {
+  		const mincol = [69,84,84];            //lemon
+  		const maxcol = [60,100,93];           //yellow
+	  }
 	  
 	  const l = Math.floor((maxcol[2]-mincol[2])/maxval*num+mincol[2])/100;
 	  const a = Math.floor((maxcol[1]-mincol[1])/maxval*num+mincol[1]) * Math.min(l, 1 - l) / 100;
@@ -101,7 +125,7 @@ function NumbertoColor(num) {
 document.getElementById("index").onchange = function() {
 	selected_index = document.getElementById("index").value;
 	if (selected_index == "PLEES") {
-		legend0.innerHTML = "<span style='background:"+NumbertoColor(0.0)+";'></span>0";
+		legend0.innerHTML = "<span style='background:"+NumbertoColor("NaN")+";'></span>0";
 		legend1.innerHTML = "<span style='background:"+NumbertoColor(1)+";'></span>1";
 		legend2.innerHTML = "<span style='background:"+NumbertoColor(2)+";'></span>2";
 		legend3.innerHTML = "<span style='background:"+NumbertoColor(3)+";'></span>3";

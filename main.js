@@ -82,25 +82,26 @@ function NumbertoColor(num) {
 	  //if (b.length == 1)
 	//	b = "0" + b;
 	  //return "#" + r + g + b;
-	  if (num < maxval/8) {
+	  console.log(num);
+	  if (num < maxval/8.0) {
   		const mincol = [224,83,19];           //blue
   		const maxcol = [232,60,36];           //midnight blue
-	  } else if ( num < maxval * 2/8) {
+	  } else if ( num < maxval * 2.0/8.0) {
   		const mincol = [232,60,36];           //midnight blue
   		const maxcol = [213,66,40];           //navy
-	  } else if ( num < maxval * 3/8) {
+	  } else if ( num < maxval * 3.0/8.0) {
   		const mincol = [213,66,40];           //navy
   		const maxcol = [197,74,43];           //light blue
-	  } else if ( num < maxval * 4/8) {
+	  } else if ( num < maxval * 4.0/8.0) {
   		const mincol = [197,74,43];           //light blue
   		const maxcol = [186,53,51];           //teal
-	  } else if ( num < maxval * 5/8) {
+	  } else if ( num < maxval * 5.0/8.0) {
   		const mincol = [186,53,51];           //teal
   		const maxcol = [166,44,65];           //green
-	  } else if ( num < maxval * 6/8) {
+	  } else if ( num < maxval * 6.0/8.0) {
   		const mincol = [166,44,65];           //green
   		const maxcol = [98,55,81];            //lime
-	  } else if ( num < maxval * 7/8) {
+	  } else if ( num < maxval * 7.0/8.0) {
   		const mincol = [98,55,81];            //lime
   		const maxcol = [69,84,84];            //lemon
 	  } else if ( num < maxval ) {

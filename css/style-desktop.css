@@ -137,6 +137,17 @@ nav a:hover, .dropdown:hover .dropbtn {
 	border-bottom: solid 1px #ddd;
 }
 
+#feature-content h1 {
+	padding: 0px 0px 0px 0px;
+	letter-spacing: -1px;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-family: 'Oswald', sans-serif;
+	font-size: 24pt;
+	font-weight: 200;
+	color: #303030;
+}
+
 #feature-content h2 {
 	padding: 0px 0px 20px 0px;
 	letter-spacing: -2px;
@@ -165,6 +176,16 @@ nav a:hover, .dropdown:hover .dropbtn {
 	padding: 0px 0px 60px 0px;
 }
 
+#content h1 {
+	padding: 0px 0px 0px 0px;
+	letter-spacing: -1px;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-family: 'Oswald', sans-serif;
+	font-size: 24pt;
+	font-weight: 200;
+	color: #303030;
+} 
 #content h2 {
 	padding: 0px 0px 0px 0px;
 	letter-spacing: -2px;

@@ -324,16 +324,12 @@ map.on('click', function (evt) {
 });
 
 var plot1 = document.getElementById('info_country_1');
-var plot2 = document.getElementById('info_country_2');
-var plot3 = document.getElementById('info_country_3');
 var layout = {  autosize: true, showlegend: false,
   //width: "50%",
   //height: "50%",
   margin: { l: 25, r: 25, b: 25, t: 25, pad: 0}};
   
 Plotly.newPlot( plot1, [{x: [null],y: [null] }], layout, {staticPlot: true});
-Plotly.newPlot( plot2, [{x: [null],y: [null] }], layout, {staticPlot: true});
-Plotly.newPlot( plot3, [{x: [null],y: [null] }], layout, {staticPlot: true});
 
 
 
@@ -363,6 +359,4 @@ function updatePlot(feature) {
 	Plotly.newPlot(plot1, cont_data, 
 	{title: title_string, autosize: true, showlegend: false, 
 	margin: { l: 25, r: 25, b: 25, t: 25, pad: 0}}, {staticPlot: true});
-	Plotly.update(plot2, {'x': [x], 'y': [y]});
-	Plotly.update(plot3, {'x': [x], 'y': [y]});
 }

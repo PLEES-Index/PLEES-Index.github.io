@@ -46,7 +46,7 @@ function findSub(atr, val, out) {
 // Function to determine if a number has a value
 function checkValue(num) {  
 	if (isNaN(num)) {
-		if ( typeof num == "string" && num != "NaN") {
+		if ( typeof num == "string" && num != "NaN" && num.length != 0) {
 			return num;
 		} else {
 			return 'Missing data';
